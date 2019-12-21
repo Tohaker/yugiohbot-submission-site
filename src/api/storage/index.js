@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export const submitText = async (title, effect) => {
   const url = new URL("https://some-url.com"); //TODO: Replace this with real API address
   const params = { title, effect };
@@ -13,40 +15,51 @@ export const submitText = async (title, effect) => {
 };
 
 export const submitImage = async file => {
-  const signedUrl = await getSignedURL(file.name);
-  const formData = new FormData();
-  formData.append(file);
+  const url =
+    "https://us-east1-yugiohbot.cloudfunctions.net/yugiohbot_signed-url";
 
-  return await fetch(signedUrl, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "image/png"
-    },
-    body: formData
-  })
-    .then(r => {
-      console.log("success: ", r);
+  await axios
+    .post(url, {
+      bucket: "yugiohbot-images/pending",
+      filename: file.name,
+      contentType: file.type
     })
-    .catch(e => {
-      console.log("error: ", e);
+    .then(response => {
+      console.log(response)
+      axios
+        .put(response.data.signed_url, file, {
+          headers: {
+            "Content-Type": file.type
+          }
+        })
+        .then(response => {
+          console.log("success : ", response);
+        })
+        .catch(error => {
+          console.log("errorSubmitImage : ", error);
+        });
+    })
+    .catch(error => {
+      console.log("errorSignedURL : ", error);
+      return "";
     });
 };
 
-const getSignedURL = async filename => {
-  const url = "https://google-signed-url-function.com";
-  await fetch(url, {
-    method: "POST",
-    body: {
-      bucket: "yugiohbot-images/submitted",
-      filename
-    }
-  })
-    .then(r => {
-      console.log("Signed URL: ", r);
-      return r;
-    })
-    .catch(e => {
-      console.log("Error: ", e);
-      return null;
-    });
-};
+// const getSignedURL = async filename => {
+//   const url =
+//     "https://us-east1-yugiohbot.cloudfunctions.net/yugiohbot_signed-url";
+
+//   await axios
+//     .post(url, {
+//       bucket: "yugiohbot-images/pending",
+//       filename,
+//       contentType: "image/jpeg"
+//     })
+//     .then(response => {
+//       return response.data.signed_url;
+//     })
+//     .catch(error => {
+//       console.log("errorSignedURL : ", error);
+//       return "";
+//     });
+// };

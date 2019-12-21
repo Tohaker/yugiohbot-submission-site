@@ -1,8 +1,8 @@
 import React from "react";
-import { submitImage, submitText } from "../../api/storage";
+import { submitImage, submitText } from "api/storage";
 import styled from "styled-components";
 
-const Form = styled.form`
+const Form = styled.div`
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -14,7 +14,7 @@ const Form = styled.form`
 `;
 
 const Input = styled.input`
-  height: calc(10px + 2vmin);
+  height: calc(10px + 3vmin);
   font-size: calc(10px + 2vmin);
   margin: 1vmin 5vmin;
 
@@ -39,12 +39,12 @@ const SubmissionForm = () => {
     const effect = effectRef.current.value || "";
 
     // TODO: Show loading icon
-    await submitText(title, effect);
+    // await submitText(title, effect);
     await submitImage(image);
   };
 
   return (
-    <Form onSubmit={submitForm}>
+    <Form>
       <label>
         Card Title:
         <Input type="text" name="title" ref={titleRef} />
@@ -57,7 +57,7 @@ const SubmissionForm = () => {
         Card Effect:
         <Input type="text" name="effect" ref={effectRef} />
       </label>
-      <SubmitButton type="submit">Submit for evaluation</SubmitButton>
+      <SubmitButton onClick={submitForm}>Submit for evaluation</SubmitButton>
     </Form>
   );
 };
