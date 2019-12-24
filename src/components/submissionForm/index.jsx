@@ -1,5 +1,5 @@
 import React from "react";
-import { submitImage, submitText } from "api/storage";
+import { submitForm } from "api/storage";
 import styled from "styled-components";
 
 const Form = styled.div`
@@ -33,14 +33,13 @@ const SubmissionForm = () => {
   const fileRef = React.useRef(null);
   const effectRef = React.useRef(null);
 
-  const submitForm = async () => {
+  const submit = async () => {
     const title = titleRef.current.value || "";
     const image = fileRef.current.files[0];
     const effect = effectRef.current.value || "";
 
     // TODO: Show loading icon
-    // await submitText(title, effect);
-    await submitImage(image);
+    await submitForm(image, title, effect);
   };
 
   return (
@@ -57,7 +56,7 @@ const SubmissionForm = () => {
         Card Effect:
         <Input type="text" name="effect" ref={effectRef} />
       </label>
-      <SubmitButton onClick={submitForm}>Submit for evaluation</SubmitButton>
+      <SubmitButton onClick={submit}>Submit for evaluation</SubmitButton>
     </Form>
   );
 };
