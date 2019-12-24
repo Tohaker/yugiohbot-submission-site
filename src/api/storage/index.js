@@ -9,12 +9,12 @@ export const submitForm = async (file, title, effect) => {
   data.append("effect", effect);
   data.append(file.name, file);
 
-  axios
-    .post(url, data, {})
-    .then(response => {
-      console.log(response);
-    })
-    .catch(error => {
-      console.log(error);
-    });
+  try {
+    const result = axios.post(url, data, {});
+    console.log(result);
+    return true;
+  } catch (error) {
+    console.log("Error : ", error);
+    return false;
+  }
 };
