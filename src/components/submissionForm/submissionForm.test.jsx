@@ -11,6 +11,7 @@ describe("Submission Form", () => {
   beforeEach(() => {
     mockResponse = true;
     jest.mock("api/storage", () => ({ submitForm: mockSubmitForm }));
+    global.URL.createObjectURL = jest.fn();
 
     SubmissionForm = require(".").default;
     wrapper = mount(<SubmissionForm />);
@@ -135,6 +136,27 @@ describe("Submission Form", () => {
       });
 
       expect(mockSetLoading).toHaveBeenCalledWith(true);
+    });
+  });
+
+  describe("When an image is uploaded", () => {
+    it("should display in the preview box", () => {
+      const fileContents = "testImage";
+      const file = new Blob([fileContents], { type: "image/jpg" });
+
+      act(() => {
+        wrapper
+          .find("input")
+          .at(1)
+          .simulate("change", {
+            target: { files: [file] }
+          });
+      });
+
+      wrapper.update();
+
+      const image = wrapper.find("img");
+      expect(image.prop("src")).not.toBe("bewd.jpg");
     });
   });
 });

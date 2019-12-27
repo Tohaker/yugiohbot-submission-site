@@ -11,17 +11,15 @@ exports[`Submission Form When the submit button is pressed When an error is retu
           "componentStyle": ComponentStyle {
             "componentId": "sc-bdVaJa",
             "isStatic": false,
-            "lastClassName": "qpQpp",
+            "lastClassName": "jyvpmt",
             "rules": Array [
               "
   background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  padding: 0 1vmin;
   font-size: calc(10px + 2vmin);
   text-align: left;
   color: white;
-  padding: 0 8px;
 ",
             ],
           },
@@ -38,16 +36,120 @@ exports[`Submission Form When the submit button is pressed When an error is retu
       forwardedRef={null}
     >
       <div
-        className="sc-bdVaJa qpQpp"
+        className="sc-bdVaJa jyvpmt"
       >
-        <label>
-          Card Title:
-        </label>
-        <styled.input
-          name="title"
-          onChange={[Function]}
-          type="text"
-        >
+        <styled.p>
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-bxivhb",
+                  "isStatic": false,
+                  "lastClassName": "gZxFzu",
+                  "rules": Array [
+                    "
+  font-weight: bold;
+  font-size: calc(10px + 3vmin);
+  margin: 0;
+",
+                  ],
+                },
+                "displayName": "styled.p",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-bxivhb",
+                "target": "p",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <p
+              className="sc-bxivhb gZxFzu"
+            >
+              YuGiOh Bot 3000 Submissions
+            </p>
+          </StyledComponent>
+        </styled.p>
+        <styled.p>
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-ifAKCX",
+                  "isStatic": false,
+                  "lastClassName": "eUzXhR",
+                  "rules": Array [
+                    "
+  font-weight: italic;
+  font-size: calc(10px + 1vmin);
+  margin: 0;
+",
+                  ],
+                },
+                "displayName": "styled.p",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-ifAKCX",
+                "target": "p",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <p
+              className="sc-ifAKCX eUzXhR"
+            >
+              Images must be under 10MB in size.
+            </p>
+          </StyledComponent>
+        </styled.p>
+        <styled.p>
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-ifAKCX",
+                  "isStatic": false,
+                  "lastClassName": "eUzXhR",
+                  "rules": Array [
+                    "
+  font-weight: italic;
+  font-size: calc(10px + 1vmin);
+  margin: 0;
+",
+                  ],
+                },
+                "displayName": "styled.p",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-ifAKCX",
+                "target": "p",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <p
+              className="sc-ifAKCX eUzXhR"
+            >
+              They will look best with a 512px x 512px resolution.
+            </p>
+          </StyledComponent>
+        </styled.p>
+        <styled.div>
           <StyledComponent
             forwardedComponent={
               Object {
@@ -56,9 +158,50 @@ exports[`Submission Form When the submit button is pressed When an error is retu
                 "componentStyle": ComponentStyle {
                   "componentId": "sc-bwzfXH",
                   "isStatic": false,
-                  "lastClassName": "iFxOLg",
+                  "lastClassName": "hkihGj",
                   "rules": Array [
                     "
+  margin-top: 1vmin;
+  display: flex;
+  flex-direction: column;
+  float: left;
+",
+                  ],
+                },
+                "displayName": "styled.div",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-bwzfXH",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <div
+              className="sc-bwzfXH hkihGj"
+            >
+              <label>
+                Card Title:
+              </label>
+              <styled.input
+                name="title"
+                onChange={[Function]}
+                type="text"
+              >
+                <StyledComponent
+                  forwardedComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "sc-EHOje",
+                        "isStatic": false,
+                        "lastClassName": "eymgeN",
+                        "rules": Array [
+                          "
   height: calc(10px + 3vmin);
   font-size: calc(10px + 2vmin);
   margin: 1vmin 0 3vmin 0;
@@ -67,50 +210,50 @@ exports[`Submission Form When the submit button is pressed When an error is retu
     background-color: white;
   }
 ",
-                  ],
-                },
-                "displayName": "styled.input",
-                "foldedComponentIds": Array [],
-                "render": [Function],
-                "styledComponentId": "sc-bwzfXH",
-                "target": "input",
-                "toString": [Function],
-                "warnTooManyClasses": [Function],
-                "withComponent": [Function],
-              }
-            }
-            forwardedRef={null}
-            name="title"
-            onChange={[Function]}
-            type="text"
-          >
-            <input
-              className="sc-bwzfXH iFxOLg"
-              name="title"
-              onChange={[Function]}
-              type="text"
-            />
-          </StyledComponent>
-        </styled.input>
-        <label>
-          Card Image:
-        </label>
-        <styled.input
-          name="image"
-          onChange={[Function]}
-          type="file"
-        >
-          <StyledComponent
-            forwardedComponent={
-              Object {
-                "$$typeof": Symbol(react.forward_ref),
-                "attrs": Array [],
-                "componentStyle": ComponentStyle {
-                  "componentId": "sc-bwzfXH",
-                  "isStatic": false,
-                  "lastClassName": "iFxOLg",
-                  "rules": Array [
-                    "
+                        ],
+                      },
+                      "displayName": "styled.input",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "sc-EHOje",
+                      "target": "input",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    }
+                  }
+                  forwardedRef={null}
+                  name="title"
+                  onChange={[Function]}
+                  type="text"
+                >
+                  <input
+                    className="sc-EHOje eymgeN"
+                    name="title"
+                    onChange={[Function]}
+                    type="text"
+                  />
+                </StyledComponent>
+              </styled.input>
+              <label>
+                Card Image:
+              </label>
+              <styled.input
+                name="image"
+                onChange={[Function]}
+                type="file"
+              >
+                <StyledComponent
+                  forwardedComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "sc-EHOje",
+                        "isStatic": false,
+                        "lastClassName": "eymgeN",
+                        "rules": Array [
+                          "
   height: calc(10px + 3vmin);
   font-size: calc(10px + 2vmin);
   margin: 1vmin 0 3vmin 0;
@@ -119,50 +262,50 @@ exports[`Submission Form When the submit button is pressed When an error is retu
     background-color: white;
   }
 ",
-                  ],
-                },
-                "displayName": "styled.input",
-                "foldedComponentIds": Array [],
-                "render": [Function],
-                "styledComponentId": "sc-bwzfXH",
-                "target": "input",
-                "toString": [Function],
-                "warnTooManyClasses": [Function],
-                "withComponent": [Function],
-              }
-            }
-            forwardedRef={null}
-            name="image"
-            onChange={[Function]}
-            type="file"
-          >
-            <input
-              className="sc-bwzfXH iFxOLg"
-              name="image"
-              onChange={[Function]}
-              type="file"
-            />
-          </StyledComponent>
-        </styled.input>
-        <label>
-          Card Effect:
-        </label>
-        <styled.input
-          name="effect"
-          onChange={[Function]}
-          type="text"
-        >
-          <StyledComponent
-            forwardedComponent={
-              Object {
-                "$$typeof": Symbol(react.forward_ref),
-                "attrs": Array [],
-                "componentStyle": ComponentStyle {
-                  "componentId": "sc-bwzfXH",
-                  "isStatic": false,
-                  "lastClassName": "iFxOLg",
-                  "rules": Array [
-                    "
+                        ],
+                      },
+                      "displayName": "styled.input",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "sc-EHOje",
+                      "target": "input",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    }
+                  }
+                  forwardedRef={null}
+                  name="image"
+                  onChange={[Function]}
+                  type="file"
+                >
+                  <input
+                    className="sc-EHOje eymgeN"
+                    name="image"
+                    onChange={[Function]}
+                    type="file"
+                  />
+                </StyledComponent>
+              </styled.input>
+              <label>
+                Card Effect:
+              </label>
+              <styled.input
+                name="effect"
+                onChange={[Function]}
+                type="text"
+              >
+                <StyledComponent
+                  forwardedComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "sc-EHOje",
+                        "isStatic": false,
+                        "lastClassName": "eymgeN",
+                        "rules": Array [
+                          "
   height: calc(10px + 3vmin);
   font-size: calc(10px + 2vmin);
   margin: 1vmin 0 3vmin 0;
@@ -171,38 +314,84 @@ exports[`Submission Form When the submit button is pressed When an error is retu
     background-color: white;
   }
 ",
-                  ],
-                },
-                "displayName": "styled.input",
-                "foldedComponentIds": Array [],
-                "render": [Function],
-                "styledComponentId": "sc-bwzfXH",
-                "target": "input",
-                "toString": [Function],
-                "warnTooManyClasses": [Function],
-                "withComponent": [Function],
-              }
-            }
-            forwardedRef={null}
-            name="effect"
-            onChange={[Function]}
-            type="text"
-          >
-            <input
-              className="sc-bwzfXH iFxOLg"
-              name="effect"
-              onChange={[Function]}
-              type="text"
-            />
+                        ],
+                      },
+                      "displayName": "styled.input",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "sc-EHOje",
+                      "target": "input",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    }
+                  }
+                  forwardedRef={null}
+                  name="effect"
+                  onChange={[Function]}
+                  type="text"
+                >
+                  <input
+                    className="sc-EHOje eymgeN"
+                    name="effect"
+                    onChange={[Function]}
+                    type="text"
+                  />
+                </StyledComponent>
+              </styled.input>
+              <styled.button
+                disabled={false}
+                id="submit"
+                onClick={[Function]}
+              >
+                <StyledComponent
+                  disabled={false}
+                  forwardedComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "sc-bZQynM",
+                        "isStatic": false,
+                        "lastClassName": "NKiVp",
+                        "rules": Array [
+                          "
+  font-size: calc(10px + 2vmin);
+  background-color: white;
+  border-radius: 50px;
+",
+                        ],
+                      },
+                      "displayName": "styled.button",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "sc-bZQynM",
+                      "target": "button",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    }
+                  }
+                  forwardedRef={null}
+                  id="submit"
+                  onClick={[Function]}
+                >
+                  <button
+                    className="sc-bZQynM NKiVp"
+                    disabled={false}
+                    id="submit"
+                    onClick={[Function]}
+                  >
+                    Submit
+                  </button>
+                </StyledComponent>
+              </styled.button>
+              <label />
+            </div>
           </StyledComponent>
-        </styled.input>
-        <styled.button
-          disabled={false}
-          id="submit"
-          onClick={[Function]}
-        >
+        </styled.div>
+        <styled.div>
           <StyledComponent
-            disabled={false}
             forwardedComponent={
               Object {
                 "$$typeof": Symbol(react.forward_ref),
@@ -210,40 +399,42 @@ exports[`Submission Form When the submit button is pressed When an error is retu
                 "componentStyle": ComponentStyle {
                   "componentId": "sc-htpNat",
                   "isStatic": false,
-                  "lastClassName": "bAkHCv",
+                  "lastClassName": "cOBxIe",
                   "rules": Array [
                     "
-  font-size: calc(10px + 2vmin);
-  background-color: white;
-  border-radius: 50px;
+  margin-top: 1vmin;
+  display: flex;
+  flex-direction: column;
+  float: left;
+  padding: 0 1vmin;
 ",
                   ],
                 },
-                "displayName": "styled.button",
+                "displayName": "styled.div",
                 "foldedComponentIds": Array [],
                 "render": [Function],
                 "styledComponentId": "sc-htpNat",
-                "target": "button",
+                "target": "div",
                 "toString": [Function],
                 "warnTooManyClasses": [Function],
                 "withComponent": [Function],
               }
             }
             forwardedRef={null}
-            id="submit"
-            onClick={[Function]}
           >
-            <button
-              className="sc-htpNat bAkHCv"
-              disabled={false}
-              id="submit"
-              onClick={[Function]}
+            <div
+              className="sc-htpNat cOBxIe"
             >
-              Submit
-            </button>
+              <label>
+                Image Preview: 
+              </label>
+              <img
+                alt="Preview"
+                src="bewd.jpg"
+              />
+            </div>
           </StyledComponent>
-        </styled.button>
-        <label />
+        </styled.div>
       </div>
     </StyledComponent>
   </styled.div>
@@ -261,17 +452,15 @@ exports[`Submission Form should render correctly 1`] = `
           "componentStyle": ComponentStyle {
             "componentId": "sc-bdVaJa",
             "isStatic": false,
-            "lastClassName": "qpQpp",
+            "lastClassName": "jyvpmt",
             "rules": Array [
               "
   background-color: #282c34;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  padding: 0 1vmin;
   font-size: calc(10px + 2vmin);
   text-align: left;
   color: white;
-  padding: 0 8px;
 ",
             ],
           },
@@ -288,16 +477,120 @@ exports[`Submission Form should render correctly 1`] = `
       forwardedRef={null}
     >
       <div
-        className="sc-bdVaJa qpQpp"
+        className="sc-bdVaJa jyvpmt"
       >
-        <label>
-          Card Title:
-        </label>
-        <styled.input
-          name="title"
-          onChange={[Function]}
-          type="text"
-        >
+        <styled.p>
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-bxivhb",
+                  "isStatic": false,
+                  "lastClassName": "gZxFzu",
+                  "rules": Array [
+                    "
+  font-weight: bold;
+  font-size: calc(10px + 3vmin);
+  margin: 0;
+",
+                  ],
+                },
+                "displayName": "styled.p",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-bxivhb",
+                "target": "p",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <p
+              className="sc-bxivhb gZxFzu"
+            >
+              YuGiOh Bot 3000 Submissions
+            </p>
+          </StyledComponent>
+        </styled.p>
+        <styled.p>
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-ifAKCX",
+                  "isStatic": false,
+                  "lastClassName": "eUzXhR",
+                  "rules": Array [
+                    "
+  font-weight: italic;
+  font-size: calc(10px + 1vmin);
+  margin: 0;
+",
+                  ],
+                },
+                "displayName": "styled.p",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-ifAKCX",
+                "target": "p",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <p
+              className="sc-ifAKCX eUzXhR"
+            >
+              Images must be under 10MB in size.
+            </p>
+          </StyledComponent>
+        </styled.p>
+        <styled.p>
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-ifAKCX",
+                  "isStatic": false,
+                  "lastClassName": "eUzXhR",
+                  "rules": Array [
+                    "
+  font-weight: italic;
+  font-size: calc(10px + 1vmin);
+  margin: 0;
+",
+                  ],
+                },
+                "displayName": "styled.p",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-ifAKCX",
+                "target": "p",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <p
+              className="sc-ifAKCX eUzXhR"
+            >
+              They will look best with a 512px x 512px resolution.
+            </p>
+          </StyledComponent>
+        </styled.p>
+        <styled.div>
           <StyledComponent
             forwardedComponent={
               Object {
@@ -306,9 +599,50 @@ exports[`Submission Form should render correctly 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "sc-bwzfXH",
                   "isStatic": false,
-                  "lastClassName": "iFxOLg",
+                  "lastClassName": "hkihGj",
                   "rules": Array [
                     "
+  margin-top: 1vmin;
+  display: flex;
+  flex-direction: column;
+  float: left;
+",
+                  ],
+                },
+                "displayName": "styled.div",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-bwzfXH",
+                "target": "div",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <div
+              className="sc-bwzfXH hkihGj"
+            >
+              <label>
+                Card Title:
+              </label>
+              <styled.input
+                name="title"
+                onChange={[Function]}
+                type="text"
+              >
+                <StyledComponent
+                  forwardedComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "sc-EHOje",
+                        "isStatic": false,
+                        "lastClassName": "eymgeN",
+                        "rules": Array [
+                          "
   height: calc(10px + 3vmin);
   font-size: calc(10px + 2vmin);
   margin: 1vmin 0 3vmin 0;
@@ -317,50 +651,50 @@ exports[`Submission Form should render correctly 1`] = `
     background-color: white;
   }
 ",
-                  ],
-                },
-                "displayName": "styled.input",
-                "foldedComponentIds": Array [],
-                "render": [Function],
-                "styledComponentId": "sc-bwzfXH",
-                "target": "input",
-                "toString": [Function],
-                "warnTooManyClasses": [Function],
-                "withComponent": [Function],
-              }
-            }
-            forwardedRef={null}
-            name="title"
-            onChange={[Function]}
-            type="text"
-          >
-            <input
-              className="sc-bwzfXH iFxOLg"
-              name="title"
-              onChange={[Function]}
-              type="text"
-            />
-          </StyledComponent>
-        </styled.input>
-        <label>
-          Card Image:
-        </label>
-        <styled.input
-          name="image"
-          onChange={[Function]}
-          type="file"
-        >
-          <StyledComponent
-            forwardedComponent={
-              Object {
-                "$$typeof": Symbol(react.forward_ref),
-                "attrs": Array [],
-                "componentStyle": ComponentStyle {
-                  "componentId": "sc-bwzfXH",
-                  "isStatic": false,
-                  "lastClassName": "iFxOLg",
-                  "rules": Array [
-                    "
+                        ],
+                      },
+                      "displayName": "styled.input",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "sc-EHOje",
+                      "target": "input",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    }
+                  }
+                  forwardedRef={null}
+                  name="title"
+                  onChange={[Function]}
+                  type="text"
+                >
+                  <input
+                    className="sc-EHOje eymgeN"
+                    name="title"
+                    onChange={[Function]}
+                    type="text"
+                  />
+                </StyledComponent>
+              </styled.input>
+              <label>
+                Card Image:
+              </label>
+              <styled.input
+                name="image"
+                onChange={[Function]}
+                type="file"
+              >
+                <StyledComponent
+                  forwardedComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "sc-EHOje",
+                        "isStatic": false,
+                        "lastClassName": "eymgeN",
+                        "rules": Array [
+                          "
   height: calc(10px + 3vmin);
   font-size: calc(10px + 2vmin);
   margin: 1vmin 0 3vmin 0;
@@ -369,50 +703,50 @@ exports[`Submission Form should render correctly 1`] = `
     background-color: white;
   }
 ",
-                  ],
-                },
-                "displayName": "styled.input",
-                "foldedComponentIds": Array [],
-                "render": [Function],
-                "styledComponentId": "sc-bwzfXH",
-                "target": "input",
-                "toString": [Function],
-                "warnTooManyClasses": [Function],
-                "withComponent": [Function],
-              }
-            }
-            forwardedRef={null}
-            name="image"
-            onChange={[Function]}
-            type="file"
-          >
-            <input
-              className="sc-bwzfXH iFxOLg"
-              name="image"
-              onChange={[Function]}
-              type="file"
-            />
-          </StyledComponent>
-        </styled.input>
-        <label>
-          Card Effect:
-        </label>
-        <styled.input
-          name="effect"
-          onChange={[Function]}
-          type="text"
-        >
-          <StyledComponent
-            forwardedComponent={
-              Object {
-                "$$typeof": Symbol(react.forward_ref),
-                "attrs": Array [],
-                "componentStyle": ComponentStyle {
-                  "componentId": "sc-bwzfXH",
-                  "isStatic": false,
-                  "lastClassName": "iFxOLg",
-                  "rules": Array [
-                    "
+                        ],
+                      },
+                      "displayName": "styled.input",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "sc-EHOje",
+                      "target": "input",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    }
+                  }
+                  forwardedRef={null}
+                  name="image"
+                  onChange={[Function]}
+                  type="file"
+                >
+                  <input
+                    className="sc-EHOje eymgeN"
+                    name="image"
+                    onChange={[Function]}
+                    type="file"
+                  />
+                </StyledComponent>
+              </styled.input>
+              <label>
+                Card Effect:
+              </label>
+              <styled.input
+                name="effect"
+                onChange={[Function]}
+                type="text"
+              >
+                <StyledComponent
+                  forwardedComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "sc-EHOje",
+                        "isStatic": false,
+                        "lastClassName": "eymgeN",
+                        "rules": Array [
+                          "
   height: calc(10px + 3vmin);
   font-size: calc(10px + 2vmin);
   margin: 1vmin 0 3vmin 0;
@@ -421,38 +755,84 @@ exports[`Submission Form should render correctly 1`] = `
     background-color: white;
   }
 ",
-                  ],
-                },
-                "displayName": "styled.input",
-                "foldedComponentIds": Array [],
-                "render": [Function],
-                "styledComponentId": "sc-bwzfXH",
-                "target": "input",
-                "toString": [Function],
-                "warnTooManyClasses": [Function],
-                "withComponent": [Function],
-              }
-            }
-            forwardedRef={null}
-            name="effect"
-            onChange={[Function]}
-            type="text"
-          >
-            <input
-              className="sc-bwzfXH iFxOLg"
-              name="effect"
-              onChange={[Function]}
-              type="text"
-            />
+                        ],
+                      },
+                      "displayName": "styled.input",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "sc-EHOje",
+                      "target": "input",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    }
+                  }
+                  forwardedRef={null}
+                  name="effect"
+                  onChange={[Function]}
+                  type="text"
+                >
+                  <input
+                    className="sc-EHOje eymgeN"
+                    name="effect"
+                    onChange={[Function]}
+                    type="text"
+                  />
+                </StyledComponent>
+              </styled.input>
+              <styled.button
+                disabled={false}
+                id="submit"
+                onClick={[Function]}
+              >
+                <StyledComponent
+                  disabled={false}
+                  forwardedComponent={
+                    Object {
+                      "$$typeof": Symbol(react.forward_ref),
+                      "attrs": Array [],
+                      "componentStyle": ComponentStyle {
+                        "componentId": "sc-bZQynM",
+                        "isStatic": false,
+                        "lastClassName": "NKiVp",
+                        "rules": Array [
+                          "
+  font-size: calc(10px + 2vmin);
+  background-color: white;
+  border-radius: 50px;
+",
+                        ],
+                      },
+                      "displayName": "styled.button",
+                      "foldedComponentIds": Array [],
+                      "render": [Function],
+                      "styledComponentId": "sc-bZQynM",
+                      "target": "button",
+                      "toString": [Function],
+                      "warnTooManyClasses": [Function],
+                      "withComponent": [Function],
+                    }
+                  }
+                  forwardedRef={null}
+                  id="submit"
+                  onClick={[Function]}
+                >
+                  <button
+                    className="sc-bZQynM NKiVp"
+                    disabled={false}
+                    id="submit"
+                    onClick={[Function]}
+                  >
+                    Submit
+                  </button>
+                </StyledComponent>
+              </styled.button>
+              <label />
+            </div>
           </StyledComponent>
-        </styled.input>
-        <styled.button
-          disabled={false}
-          id="submit"
-          onClick={[Function]}
-        >
+        </styled.div>
+        <styled.div>
           <StyledComponent
-            disabled={false}
             forwardedComponent={
               Object {
                 "$$typeof": Symbol(react.forward_ref),
@@ -460,40 +840,42 @@ exports[`Submission Form should render correctly 1`] = `
                 "componentStyle": ComponentStyle {
                   "componentId": "sc-htpNat",
                   "isStatic": false,
-                  "lastClassName": "bAkHCv",
+                  "lastClassName": "cOBxIe",
                   "rules": Array [
                     "
-  font-size: calc(10px + 2vmin);
-  background-color: white;
-  border-radius: 50px;
+  margin-top: 1vmin;
+  display: flex;
+  flex-direction: column;
+  float: left;
+  padding: 0 1vmin;
 ",
                   ],
                 },
-                "displayName": "styled.button",
+                "displayName": "styled.div",
                 "foldedComponentIds": Array [],
                 "render": [Function],
                 "styledComponentId": "sc-htpNat",
-                "target": "button",
+                "target": "div",
                 "toString": [Function],
                 "warnTooManyClasses": [Function],
                 "withComponent": [Function],
               }
             }
             forwardedRef={null}
-            id="submit"
-            onClick={[Function]}
           >
-            <button
-              className="sc-htpNat bAkHCv"
-              disabled={false}
-              id="submit"
-              onClick={[Function]}
+            <div
+              className="sc-htpNat cOBxIe"
             >
-              Submit
-            </button>
+              <label>
+                Image Preview: 
+              </label>
+              <img
+                alt="Preview"
+                src="bewd.jpg"
+              />
+            </div>
           </StyledComponent>
-        </styled.button>
-        <label />
+        </styled.div>
       </div>
     </StyledComponent>
   </styled.div>
