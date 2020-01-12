@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/yugiohbot-submission-site/static/css/main.498d002a.chunk.css",
+    "main.js": "/yugiohbot-submission-site/static/js/main.7fe2a91f.chunk.js",
+    "main.js.map": "/yugiohbot-submission-site/static/js/main.7fe2a91f.chunk.js.map",
+    "runtime-main.js": "/yugiohbot-submission-site/static/js/runtime-main.de9e81b1.js",
+    "runtime-main.js.map": "/yugiohbot-submission-site/static/js/runtime-main.de9e81b1.js.map",
+    "static/js/2.baee024a.chunk.js": "/yugiohbot-submission-site/static/js/2.baee024a.chunk.js",
+    "static/js/2.baee024a.chunk.js.map": "/yugiohbot-submission-site/static/js/2.baee024a.chunk.js.map",
+    "index.html": "/yugiohbot-submission-site/index.html",
+    "precache-manifest.110739cef88e316b7d050849a179faba.js": "/yugiohbot-submission-site/precache-manifest.110739cef88e316b7d050849a179faba.js",
+    "service-worker.js": "/yugiohbot-submission-site/service-worker.js",
+    "static/css/main.498d002a.chunk.css.map": "/yugiohbot-submission-site/static/css/main.498d002a.chunk.css.map",
+    "static/media/bewd.jpg": "/yugiohbot-submission-site/static/media/bewd.01852ee3.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.de9e81b1.js",
+    "static/js/2.baee024a.chunk.js",
+    "static/css/main.498d002a.chunk.css",
+    "static/js/main.7fe2a91f.chunk.js"
+  ]
+}
