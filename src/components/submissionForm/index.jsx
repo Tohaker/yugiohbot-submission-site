@@ -59,15 +59,15 @@ const SubmissionForm = () => {
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState("");
 
-  const [title, setTitle] = React.useState("");
-  const [effect, setEffect] = React.useState("");
+  // const [title, setTitle] = React.useState("");
+  // const [effect, setEffect] = React.useState("");
 
   const [image, setImage] = React.useState();
   const [preview, setPreview] = React.useState(placeholder);
 
   const submit = async () => {
     setLoading(true);
-    const result = await submitForm(image, title, effect);
+    const result = await submitForm(image, "", "");
     if (!result) {
       setError("Something went wrong, please try again later.");
     }
@@ -81,15 +81,19 @@ const SubmissionForm = () => {
       <Subheading>
         They will look best with a 512px x 512px resolution.
       </Subheading>
+      <ImagePreview>
+        <label>Image Preview: </label>
+        <img src={preview} alt="Preview" />
+      </ImagePreview>
       <Form>
-        <label>Card Title:</label>
+        {/* <label>Card Title:</label>
         <Input
           type="text"
           name="title"
           onChange={e => {
             setTitle(e.target.value);
           }}
-        />
+        /> */}
         <label>Card Image:</label>
         <Input
           type="file"
@@ -99,23 +103,19 @@ const SubmissionForm = () => {
             setImage(e.target.files[0]);
           }}
         />
-        <label>Card Effect:</label>
+        {/* <label>Card Effect:</label>
         <Input
           type="text"
           name="effect"
           onChange={e => {
             setEffect(e.target.value);
           }}
-        />
+        /> */}
         <SubmitButton onClick={submit} disabled={loading} id="submit">
           Submit
         </SubmitButton>
         <label>{error}</label>
       </Form>
-      <ImagePreview>
-        <label>Image Preview: </label>
-        <img src={preview} alt="Preview" />
-      </ImagePreview>
     </Container>
   );
 };
