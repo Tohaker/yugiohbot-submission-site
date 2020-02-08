@@ -57,7 +57,7 @@ const SubmitButton = styled.button`
 
 const SubmissionForm = () => {
   const [loading, setLoading] = React.useState(false);
-  const [error, setError] = React.useState("");
+  const [message, setMessage] = React.useState("");
 
   // const [title, setTitle] = React.useState("");
   // const [effect, setEffect] = React.useState("");
@@ -69,7 +69,9 @@ const SubmissionForm = () => {
     setLoading(true);
     const result = await submitForm(image, "", "");
     if (!result) {
-      setError("Something went wrong, please try again later.");
+      setMessage("Something went wrong, please try again later.");
+    } else {
+      setMessage(`Successfully uploaded your photo: ${image.name}`);
     }
     setLoading(false);
   };
@@ -99,6 +101,7 @@ const SubmissionForm = () => {
           type="file"
           name="image"
           onChange={e => {
+            setMessage("");
             setPreview(URL.createObjectURL(e.target.files[0]));
             setImage(e.target.files[0]);
           }}
@@ -114,7 +117,7 @@ const SubmissionForm = () => {
         <SubmitButton onClick={submit} disabled={loading} id="submit">
           Submit
         </SubmitButton>
-        <label>{error}</label>
+        <label>{message}</label>
       </Form>
     </Container>
   );
