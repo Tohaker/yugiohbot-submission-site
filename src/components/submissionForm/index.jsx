@@ -81,7 +81,7 @@ const SubmissionForm = () => {
       <Heading>YuGiOh Bot 3000 Submissions</Heading>
       <Subheading>Images must be under 10MB in size.</Subheading>
       <Subheading>
-        They will look best with a 512px x 512px resolution.
+        They will look best with a 512px x 512px resolution. Please submit your image once only.
       </Subheading>
       <ImagePreview>
         <label>Image Preview: </label>
