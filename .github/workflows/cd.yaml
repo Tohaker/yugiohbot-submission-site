@@ -13,15 +13,15 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-node@v2-beta
         with:
-          node-version: "12"
+          node-version: '12'
 
       - name: Install dependencies
         run: |
-          npm i
-          npm run build
+          yarn
+          yarn build
 
       - name: Run tests
-        run: npm t
+        run: yarn test
 
       - name: Deploy site
         uses: JamesIves/github-pages-deploy-action@releases/v3
