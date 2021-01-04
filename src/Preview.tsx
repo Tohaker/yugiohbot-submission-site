@@ -1,28 +1,44 @@
-import styled from 'styled-components';
-import frame from './assets/Normal.png';
-import image from './assets/bewd.jpg';
+import { useEffect, useRef } from 'react';
+import border from './assets/Normal.png';
+import placeholder from './assets/bewd.jpg';
+import { Container, Canvas } from './Preview.styles';
 
-const Container = styled.div`
-  display: grid;
-`;
+type Props = {
+  image?: string;
+};
 
-const Frame = styled.img`
-  grid-area: 1/1;
-  max-width: 100%;
-  max-height: 100%;
-`;
+export const Preview = ({ image }: Props) => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
-const Image = styled.img`
-  margin-left: calc(50 / 420 * 100%);
-  margin-top: calc(110 / 420 * 100%);
-  width: calc(320 / 420 * 100%);
-  height: calc(320 / 610 * 100%);
-  grid-area: 1/1;
-`;
+  useEffect(() => {
+    let count = 2;
+    const context = canvasRef.current?.getContext('2d');
+    const frame = new Image();
+    const img = new Image();
 
-export const Preview = () => (
-  <Container>
-    <Frame src={frame} alt="card frame" />
-    <Image src={image} alt="submission preview" />
-  </Container>
-);
+    const render = () => {
+      if (--count > 0) return;
+
+      context?.drawImage(frame, 0, 0);
+      context?.drawImage(img, 50, 110, 320, 320);
+    };
+
+    frame.onload = render;
+    img.onload = render;
+
+    frame.src = border;
+    img.src = image || placeholder;
+  }, [image]);
+
+  return (
+    <Container>
+      <div>Preview</div>
+      <Canvas
+        ref={canvasRef}
+        width="420"
+        height="610"
+        data-testid="card preview"
+      />
+    </Container>
+  );
+};
