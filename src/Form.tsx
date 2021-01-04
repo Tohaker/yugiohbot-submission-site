@@ -27,7 +27,7 @@ const submitForm = async (file: File) => {
   data.append(file.name, file);
 
   try {
-    axios.post(url, data, {});
+    await axios.post(url, data, {});
     return true;
   } catch (error) {
     console.error('Error submitting image: ', error);
@@ -37,7 +37,7 @@ const submitForm = async (file: File) => {
 
 export const SubmissionForm = ({ setPreview }: Props) => {
   const [loading, setLoading] = useState(false);
-  const [image, setImage] = useState<File | null>();
+  const [image, setImage] = useState<File | null>(null);
   const [message, setMessage] = useState('');
 
   const submit = useCallback(async () => {
@@ -53,7 +53,7 @@ export const SubmissionForm = ({ setPreview }: Props) => {
   return (
     <Container>
       <TitleContainer>
-        <div>Upload Image</div>
+        <label htmlFor="imageBrowser">Upload Image</label>
         <Information data-tip data-for="uploadHelp">
           ?
         </Information>
@@ -69,6 +69,7 @@ export const SubmissionForm = ({ setPreview }: Props) => {
         <Input
           type="file"
           name="image"
+          id="imageBrowser"
           onChange={({ target }) => {
             setPreview(URL.createObjectURL(target.files && target.files[0]));
             setImage(target.files && target.files[0]);
@@ -78,7 +79,7 @@ export const SubmissionForm = ({ setPreview }: Props) => {
           ✔
         </UploadButton>
       </InputContainer>
-      <Label>{message}</Label>
+      <Label data-testid="message">{message}</Label>
     </Container>
   );
 };
