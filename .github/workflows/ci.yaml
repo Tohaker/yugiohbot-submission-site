@@ -3,18 +3,5 @@ name: CI
 on: pull_request
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: "14"
-
-      - name: Install dependencies
-        run: |
-          yarn
-          yarn build
-
-      - name: Run tests
-        run: yarn test
+  test:
+    uses: YuGiOhBot3000/submission/.github/workflows/tests.yml@chore/reusable-workflows
