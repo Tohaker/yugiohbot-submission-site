@@ -5,23 +5,17 @@ on:
     branches: master
 
 jobs:
-  build:
+  test:
+    uses: YuGiOhBot3000/submission/.github/workflows/tests.yml@master
+  deploy:
+    needs: test
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Download package
+        uses: actions/download-artifact@v2
         with:
-          persist-credentials: false
-      - uses: actions/setup-node@v2
-        with:
-          node-version: "14"
-
-      - name: Install dependencies
-        run: |
-          yarn
-          yarn build
-
-      - name: Run tests
-        run: yarn test
+          name: submission-site
+          path: build
 
       - name: Deploy site
         uses: JamesIves/github-pages-deploy-action@releases/v4

@@ -4,4 +4,4 @@ on: pull_request
 
 jobs:
   test:
-    uses: YuGiOhBot3000/submission/.github/workflows/tests.yml@chore/reusable-workflows
+    uses: YuGiOhBot3000/submission/.github/workflows/tests.yml@master
