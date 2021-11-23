@@ -1,6 +1,6 @@
-import { useCallback, useState } from 'react';
-import ReactTooltip from 'react-tooltip';
-import axios from 'axios';
+import { useCallback, useState } from "react";
+import ReactTooltip from "react-tooltip";
+import axios from "axios";
 import {
   Container,
   TitleContainer,
@@ -9,19 +9,19 @@ import {
   Input,
   UploadButton,
   Label,
-} from './Form.styles';
+} from "./Form.styles";
 
 type Props = {
   setPreview: (image: string) => void;
 };
 
-const helpText = 'Images must be smaller than 10MB.';
+const helpText = "Images must be smaller than 10MB.";
 
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 const submitForm = async (file: File) => {
   const url =
-    'https://us-east1-yugiohbot.cloudfunctions.net/yugiohbot_submission';
+    "https://us-east1-yugiohbot.cloudfunctions.net/yugiohbot_submission";
 
   const data = new FormData();
   data.append(file.name, file);
@@ -30,7 +30,7 @@ const submitForm = async (file: File) => {
     await axios.post(url, data, {});
     return true;
   } catch (error) {
-    console.error('Error submitting image: ', error);
+    console.error("Error submitting image: ", error);
     return false;
   }
 };
@@ -38,12 +38,12 @@ const submitForm = async (file: File) => {
 export const SubmissionForm = ({ setPreview }: Props) => {
   const [loading, setLoading] = useState(false);
   const [image, setImage] = useState<File | null>(null);
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
 
   const submit = useCallback(async () => {
     setLoading(true);
     if (!image || !(await submitForm(image))) {
-      setMessage('Something went wrong, please try again later.');
+      setMessage("Something went wrong, please try again later.");
     } else {
       setMessage(`Successfully uploaded your photo: ${image.name}`);
     }
@@ -60,7 +60,7 @@ export const SubmissionForm = ({ setPreview }: Props) => {
         <ReactTooltip
           id="uploadHelp"
           place="right"
-          globalEventOff={isMobile ? 'touchstart' : undefined}
+          globalEventOff={isMobile ? "touchstart" : undefined}
         >
           <p>{helpText}</p>
         </ReactTooltip>
@@ -71,8 +71,8 @@ export const SubmissionForm = ({ setPreview }: Props) => {
           name="image"
           id="imageBrowser"
           onChange={({ target }) => {
-            setPreview(URL.createObjectURL(target.files && target.files[0]));
-            setImage(target.files && target.files[0]);
+            target.files && setPreview(URL.createObjectURL(target.files[0]));
+            setImage(target?.files?.[0] || null);
           }}
         />
         <UploadButton onClick={submit} disabled={loading}>
