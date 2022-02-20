@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, act } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import mockAxios from "jest-mock-axios";
 import { SUBMISSION_URL } from "./constants";
 
@@ -23,13 +23,12 @@ describe("Submission Form", () => {
 
   describe("given the axios request succeeds", () => {
     beforeEach(() => {
-      mockAxios.post
-        .mockResolvedValueOnce({ data: "https://some.url" })
-        .mockResolvedValueOnce({ data: { success: true } });
+      mockAxios.post.mockResolvedValue({ data: "https://some.url" });
+      mockAxios.put.mockResolvedValue({ data: { success: true } });
       global.URL.createObjectURL = jest.fn((file: File) => file.name);
     });
 
-    it("should POST the submitted image", async () => {
+    it("should PUT the submitted image", async () => {
       const mockSetPreview = jest.fn();
       render(<SubmissionForm setPreview={mockSetPreview} />);
 
@@ -43,27 +42,23 @@ describe("Submission Form", () => {
       fireEvent.change(imageInput);
       expect(mockSetPreview).toBeCalledWith("chucknorris.png");
 
-      await act(async () => {
-        fireEvent.click(submit);
-      });
-
-      expect(mockAxios.post).toBeCalledWith(SUBMISSION_URL);
-
-      expect(mockAxios.post).toBeCalledWith(
-        "https://some.url",
-        expect.any(FormData)
-      );
+      fireEvent.click(submit);
 
       const message = await screen.findByTestId("message");
       expect(message.innerHTML).toBe(
         "Successfully uploaded your photo: chucknorris.png"
       );
+
+      expect(mockAxios.post).toBeCalledWith(SUBMISSION_URL);
+      expect(mockAxios.put).toBeCalledWith("https://some.url", file, {
+        headers: { "Content-Type": file.type },
+      });
     });
   });
 
   describe("given the axios request fails", () => {
     beforeEach(() => {
-      mockAxios.post.mockRejectedValue();
+      mockAxios.post.mockRejectedValue({});
       global.URL.createObjectURL = jest.fn((file: File) => file.name);
     });
 
@@ -81,9 +76,7 @@ describe("Submission Form", () => {
       fireEvent.change(imageInput);
       expect(mockSetPreview).toBeCalledWith("chucknorris.png");
 
-      await act(async () => {
-        fireEvent.click(submit);
-      });
+      fireEvent.click(submit);
 
       const message = await screen.findByTestId("message");
       expect(message.innerHTML).toBe(

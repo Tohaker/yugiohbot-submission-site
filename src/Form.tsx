@@ -30,10 +30,7 @@ const submitForm = async (file: File) => {
   try {
     const url = await getSignedURL();
 
-    const data = new FormData();
-    data.append(file.name, file);
-
-    await axios.post(url, data);
+    await axios.put(url, file, { headers: { "Content-Type": file.type } });
     return true;
   } catch (error) {
     console.error("Error submitting image: ", error);
