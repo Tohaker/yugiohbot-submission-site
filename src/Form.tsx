@@ -10,6 +10,7 @@ import {
   UploadButton,
   Label,
 } from "./Form.styles";
+import { SUBMISSION_URL } from "./constants";
 
 type Props = {
   setPreview: (image: string) => void;
@@ -19,15 +20,20 @@ const helpText = "Images must be smaller than 10MB.";
 
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
+const getSignedURL = async () => {
+  const { data } = await axios.post<string>(SUBMISSION_URL);
+
+  return data;
+};
+
 const submitForm = async (file: File) => {
-  const url =
-    "https://us-east1-yugiohbot.cloudfunctions.net/yugiohbot_submission";
-
-  const data = new FormData();
-  data.append(file.name, file);
-
   try {
-    await axios.post(url, data, {});
+    const url = await getSignedURL();
+
+    const data = new FormData();
+    data.append(file.name, file);
+
+    await axios.post(url, data);
     return true;
   } catch (error) {
     console.error("Error submitting image: ", error);

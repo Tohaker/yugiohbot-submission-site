@@ -1,5 +1,6 @@
 import { fireEvent, render, screen, act } from "@testing-library/react";
 import mockAxios from "jest-mock-axios";
+import { SUBMISSION_URL } from "./constants";
 
 import { SubmissionForm } from "./Form";
 
@@ -22,7 +23,9 @@ describe("Submission Form", () => {
 
   describe("given the axios request succeeds", () => {
     beforeEach(() => {
-      mockAxios.post.mockResolvedValue(true);
+      mockAxios.post
+        .mockResolvedValueOnce({ data: "https://some.url" })
+        .mockResolvedValueOnce({ data: { success: true } });
       global.URL.createObjectURL = jest.fn((file: File) => file.name);
     });
 
@@ -44,10 +47,11 @@ describe("Submission Form", () => {
         fireEvent.click(submit);
       });
 
+      expect(mockAxios.post).toBeCalledWith(SUBMISSION_URL);
+
       expect(mockAxios.post).toBeCalledWith(
-        "https://us-east1-yugiohbot.cloudfunctions.net/yugiohbot_submission",
-        expect.any(FormData),
-        {}
+        "https://some.url",
+        expect.any(FormData)
       );
 
       const message = await screen.findByTestId("message");
@@ -59,7 +63,7 @@ describe("Submission Form", () => {
 
   describe("given the axios request fails", () => {
     beforeEach(() => {
-      mockAxios.post.mockRejectedValue(false);
+      mockAxios.post.mockRejectedValue();
       global.URL.createObjectURL = jest.fn((file: File) => file.name);
     });
 
