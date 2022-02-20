@@ -6,20 +6,7 @@ on:
 
 jobs:
   test:
-    uses: YuGiOhBot3000/submission/.github/workflows/tests.yml@master
+    uses: YuGiOhBot3000/submission/.github/workflows/unit.yml@master
   deploy:
     needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Download package
-        uses: actions/download-artifact@v2
-        with:
-          name: submission-site
-          path: build
-
-      - name: Deploy site
-        uses: JamesIves/github-pages-deploy-action@releases/v4
-        with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: build # The folder the action should deploy.
+    uses: YuGiOhBot3000/submission/.github/workflows/deploy.yml@master
