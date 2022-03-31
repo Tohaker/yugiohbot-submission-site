@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import mockAxios from "jest-mock-axios";
 import { SUBMISSION_URL } from "./constants";
 
@@ -44,15 +44,18 @@ describe("Submission Form", () => {
 
       fireEvent.click(submit);
 
+      await waitFor(() =>
+        expect(mockAxios.put).toBeCalledWith("https://some.url", file, {
+          headers: { "Content-Type": file.type },
+        })
+      );
+
       const message = await screen.findByTestId("message");
       expect(message.innerHTML).toBe(
         "Successfully uploaded your photo: chucknorris.png"
       );
 
       expect(mockAxios.post).toBeCalledWith(SUBMISSION_URL);
-      expect(mockAxios.put).toBeCalledWith("https://some.url", file, {
-        headers: { "Content-Type": file.type },
-      });
     });
   });
 
@@ -78,10 +81,12 @@ describe("Submission Form", () => {
 
       fireEvent.click(submit);
 
-      const message = await screen.findByTestId("message");
-      expect(message.innerHTML).toBe(
-        "Something went wrong, please try again later."
-      );
+      await waitFor(() => {
+        const message = screen.getByTestId("message");
+        return expect(message.innerHTML).toBe(
+          "Something went wrong, please try again later."
+        );
+      });
     });
   });
 });
