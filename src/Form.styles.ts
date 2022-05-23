@@ -1,57 +1,80 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  font-size: calc(10px + 1vmin);
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+`;
+
+export const HeaderImage = styled.img`
+  width: 400px;
+  margin: 0 auto;
+`;
+
+export const FocusWrapper = styled.div<{ focussed: boolean }>`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  text-align: center;
+
+  padding: 8px;
+  border-radius: 8px;
+  ${({ focussed }) =>
+    focussed
+      ? `
+    border: 1px solid white;
+  `
+      : `
+    border: 0px;
+    opacity: 0.33;
+    pointer-events: none;
+  `}
+`;
+
+export const Title = styled.label`
+  font-size: 1rem;
   font-weight: bold;
-  text-align: left;
-  max-width: calc(95% - 16px);
-  margin-left: 16px;
 `;
 
-export const TitleContainer = styled.div`
+export const FileBrowser = styled.span.attrs({ className: "file-custom" })`
+  height: auto;
+  :before {
+    height: auto;
+  }
+  :after {
+    height: 1rem;
+    box-sizing: border-box;
+  }
+`;
+
+export const ButtonWrapper = styled.div`
   display: flex;
+  gap: 4px;
 `;
 
-export const Information = styled.div`
-  background-color: white;
-  color: black;
-  text-align: center;
-  display: inline-flex;
-  align-items: center;
+const Button = styled.button`
+  display: flex;
   justify-content: center;
-  border-radius: 100%;
-  height: 24px;
-  width: 24px;
+  width: 100%;
 
-  margin-left: 16px;
-  user-select: none;
+  border: 1px solid white;
+  border-radius: 25px;
+
+  font-size: 1.5rem;
 `;
 
-export const InputContainer = styled.div`
-  display: flex;
-  padding: 1vmin 0 3vmin 0;
-`;
-
-export const Input = styled.input`
-  height: calc(10px + 3vmin);
-  font-size: calc(10px + 2vmin);
-  padding-bottom: 1vmin;
-
-  background: transparent;
-  border: none;
-`;
-
-export const UploadButton = styled.button`
-  background-color: white;
+export const ConfirmButton = styled(Button)`
+  background-color: #3eba00;
   color: black;
-  border: 1px;
-  text-align: center;
-  display: inline-block;
-  border-radius: 50%;
-  height: 34px;
-  width: 34px;
 `;
 
-export const Label = styled.label`
-  color: red;
+export const RejectButton = styled(Button)`
+  background-color: #c71e00;
+  color: white;
+`;
+
+export const UploadButton = styled(Button)`
+  background-color: #0038ba;
+  color: white;
 `;
